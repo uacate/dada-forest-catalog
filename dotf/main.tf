@@ -2,7 +2,8 @@
 # https://www.youtube.com/playlist?list=PL9evZl_m5wqsc7C38L9grx-djts2bqT_b
 
 terraform {
-  required_version = "~> 1.7.5"
+  # required_version = "~> 1.7.5"
+  required_version = "~> 1.8.0"
 
   required_providers {
     digitalocean = {
@@ -38,20 +39,14 @@ resource "digitalocean_ssh_key" "dada-forest" {
   public_key = file("${path.module}/files/id_rsa.pub")
 }
 
-resource "digitalocean_ssh_key" "uagithub" {
-  name       = "Droplet ssh key"
-  public_key = file("${path.module}/files/uagithub_id_rsa.pub")
-}
-
 resource "digitalocean_droplet" "dada-forest" {
   image      = "ubuntu-23-10-x64"
   name       = "dada-forest"
   region     = "sfo3"
   size       = "s-1vcpu-1gb"
   monitoring = true
-  ssh_keys = [
-    digitalocean_ssh_key.dada-forest.id,
-    digitalocean_ssh_key.uagithub.id
+  ssh_keys = [    
+    digitalocean_ssh_key.dada-forest.id
   ]
   user_data = file("cloud-init.sh")
   tags      = ["dada-forest"]

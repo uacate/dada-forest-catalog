@@ -40,19 +40,13 @@ services:
       - $PWD/caddy/Caddyfile:/etc/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
-
-    # restart: unless-stopped
-    # build:
-    #   context: ./caddy
-    #   dockerfile: ./Dockerfile
-    # ports:
-    #   - 80:80
-    #   - 443:443
+    restart: unless-stopped
+    
+    
     # volumes:
     #   - ./data/caddy_data:/data
     #   - ./data/caddy_config:/config
-    # depends_on:
-    #   - app
+    
     # environment:
     #   PROXY_BACKEND: app
     #   PROXY_PORT: 8000
