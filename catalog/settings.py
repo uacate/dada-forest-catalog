@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["dadaforest.net"]
 
+CSRF_TRUSTED_ORIGINS = ['https://dadaforest.net']
 
 # Application definition
 
