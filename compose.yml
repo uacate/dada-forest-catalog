@@ -33,7 +33,7 @@ services:
     container_name: caddy
     restart: unless-stopped
     build:
-      context: .
+      context: ./caddy
       dockerfile: ./Dockerfile
     ports:
       - 80:80
