@@ -37,7 +37,7 @@ services:
     depends_on:
       - app
     volumes:
-      - $PWD/caddy/Caddyfile:/etc/cady/Caddyfile
+      - $PWD/caddy/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
     restart: unless-stopped
