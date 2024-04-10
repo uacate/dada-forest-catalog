@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-l$g7kp^4y=ky4%0nm(-l*(k04t9zatollk6@tkdcds6rfc+on%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["dataforest.net"]
 
 
 # Application definition
