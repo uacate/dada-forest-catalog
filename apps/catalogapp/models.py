@@ -15,5 +15,6 @@ class Document(BaseModel):
     description = models.CharField(max_length=2500, null=True, unique=False)
 
     def __str__(self) -> str:
-        return self.id
+        return f"{self.id}"
+
         # return super().__str__()
