@@ -41,16 +41,6 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     restart: unless-stopped
-    
-    
-    # volumes:
-    #   - ./data/caddy_data:/data
-    #   - ./data/caddy_config:/config
-    
-    # environment:
-    #   PROXY_BACKEND: app
-    #   PROXY_PORT: 8000
-    #   DOMAIN: ${DOMAIN}
 
 volumes:
   caddy_data:
